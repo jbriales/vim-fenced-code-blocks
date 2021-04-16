@@ -14,9 +14,9 @@ function! s:E(cmd,bang) abort
   let pos = copy(b:pos)
   let pos[2] = 0
   call setpos(".", pos)
-  let start = search('^```.\+$', 'cbnW')
-  let end = search('^```$', 'cnW')
-  let end2 = search('^```$', 'cbnW')
+  let start = search('^ *```.\+$', 'cbnW')
+  let end = search('^ *```$', 'cnW')
+  let end2 = search('^ *```$', 'cbnW')
   if end2 > start && end2 < end || end == 0 || start == 0
     return
   endif
