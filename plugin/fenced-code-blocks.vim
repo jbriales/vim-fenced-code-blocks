@@ -31,7 +31,7 @@ function! s:E(cmd,bang) abort
     autocmd BufEnter <buffer> call s:sync()
   augroup END
   execute cmd.' '.target
-  autocmd BufLeave <buffer> write
+  autocmd BufLeave <buffer> edit | write
 endfunction
 
 function! s:sync() abort
