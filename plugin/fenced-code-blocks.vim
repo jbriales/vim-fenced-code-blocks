@@ -31,6 +31,7 @@ function! s:E(cmd,bang) abort
     autocmd BufEnter <buffer> call s:sync()
   augroup END
   execute cmd.' '.target
+  let b:is_codeblock_temp_buffer = 1
   autocmd BufLeave <buffer> edit | write
 endfunction
 
